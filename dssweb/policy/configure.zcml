@@ -1,8 +1,10 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
-    xmlns:five="http://namespaces.zope.org/five"
-    xmlns:i18n="http://namespaces.zope.org/i18n"
-    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+       xmlns:browser="http://namespaces.zope.org/browser"
+   	xmlns:five="http://namespaces.zope.org/five"
+   	    xmlns:i18n="http://namespaces.zope.org/i18n"
+   	    xmlns:cmf="http://namespaces.zope.org/cmf"
+       xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     i18n_domain="dssweb.policy">
 
   <five:registerPackage package="." initialize=".initialize" />
@@ -13,7 +15,7 @@
       name="default"
       title="dssweb.policy"
       directory="profiles/default"
-      description="Installs the collective.delegatesiteadmin package"
+      description="Installs the dssweb.policy package"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
@@ -22,8 +24,7 @@
       title="Sharing page: Manage Portlets"
       />
 
-  <utility name="Site Administrator" factory=".sharing.SiteAdministratorRole" />
+  <utility name="Site Administrator" factory=".sharing.ManagePortletsRole" />
 
-  <i18n:registerTranslations directory="locales" />
-
+      
 </configure>
